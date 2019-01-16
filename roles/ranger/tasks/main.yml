@@ -1,0 +1,10 @@
+---
+- name: 'Installing ranger'
+  pacman:
+      name: 'ranger'
+
+- name: 'Ranger config files'
+  file:
+    src: '{{ role_path }}/files/ranger'
+    dest: '/home/{{ user }}/.config/ranger'
+    state: 'link'

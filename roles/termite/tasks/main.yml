@@ -1,0 +1,10 @@
+---
+- name: 'Installing termite'
+  pacman:
+    name: 'termite'
+
+- name: 'Termite config file'
+  file:
+    src: '{{ role_path }}/files/termite'
+    dest: '/home/{{ user }}/.config/termite'
+    state: 'link'

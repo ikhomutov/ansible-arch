@@ -1,0 +1,6 @@
+# Ansible files
+*.retry
+
+# Python files
+__pycache__/
+*.py[cod]
