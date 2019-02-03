@@ -4,7 +4,8 @@
     name: 'termite'
 
 - name: 'Termite config file'
+  become_user: '{{ user }}'
   file:
     src: '{{ role_path }}/files/termite'
-    dest: '/home/{{ user }}/.config/termite'
+    dest: '{{ user_config_dir }}/termite'
     state: 'link'

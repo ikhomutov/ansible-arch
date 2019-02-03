@@ -2,6 +2,11 @@
 - hosts: localhost
   vars:
     user: 'user'
+  vars_files:
+  - vars/main.yml
+  become: yes
   roles:
   - termite
+  - nvim
   - ranger
+  - rofi

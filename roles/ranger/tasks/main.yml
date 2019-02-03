@@ -4,7 +4,8 @@
       name: 'ranger'
 
 - name: 'Ranger config files'
+  become_user: '{{ user }}'
   file:
     src: '{{ role_path }}/files/ranger'
-    dest: '/home/{{ user }}/.config/ranger'
+    dest: '{{ user_config_dir }}/ranger'
     state: 'link'

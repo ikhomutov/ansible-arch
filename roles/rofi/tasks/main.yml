@@ -1,0 +1,11 @@
+---
+- name: 'Installing rofi'
+  pacman:
+      name: 'rofi'
+
+- name: 'Rofi config files'
+  become_user: '{{ user }}'
+  file:
+    src: '{{ role_path }}/files/rofi'
+    dest: '{{ user_config_dir }}/rofi'
+    state: 'link'
