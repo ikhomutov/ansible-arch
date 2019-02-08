@@ -1,0 +1,34 @@
+---
+- name: 'create user'
+  user:
+    name: "{{ user }}"
+    createhome: true
+    group: users
+    groups: wheel,power
+  become: true
+
+- name: 'create config dir'
+  file:
+    src: '{{ user_config_dir }}'
+    state: 'directory'
+
+- name: 'copy user-dirs dirs config'
+  become_user: '{{ user }}'
+  file:
+    src: '{{ role_path }}/files/user-dirs.dirs'
+    dest: '{{ user_config_dir }}/user-dirs.dirs'
+    state: 'link'
+
+- name: 'copy user-dirs locale config'
+  become_user: '{{ user }}'
+  file:
+    src: '{{ role_path }}/files/user-dirs.locale'
+    dest: '{{ user_config_dir }}/user-dirs.locale'
+    state: 'link'
+
+- name: 'copy user aliases'
+  become_user: '{{ user }}'
+  file:
+    src: '{{ role_path }}/files/aliases'
+    dest: '{{ user_dir }}/.aliases'
+    state: 'link'

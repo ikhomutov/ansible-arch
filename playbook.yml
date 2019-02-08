@@ -6,6 +6,7 @@
   - vars/main.yml
   become: yes
   roles:
+  - user
   - termite
   - nvim
   - ranger
