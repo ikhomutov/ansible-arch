@@ -1,0 +1,14 @@
+---
+- name: 'install zsh'
+  pacman:
+    name: '{{ item }}'
+  with_items:
+      - 'zsh'
+      - 'zsh-completions'
+
+- name: 'copy zsh config'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/.zshrc'
+    dest: '{{ user.home_dir }}/.zshrc'
+    state: 'link'

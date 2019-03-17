@@ -1,0 +1,7 @@
+user:
+  name: user
+  group: users
+  uid: 1000
+  shell: /usr/bin/zsh
+  home_dir: /home/user
+  config_dir: /home/user/.config

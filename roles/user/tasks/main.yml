@@ -1,34 +1,37 @@
 ---
 - name: 'create user'
   user:
-    name: "{{ user }}"
+    name: '{{ user.name }}'
     createhome: true
-    group: users
-    groups: wheel,power
+    generate_ssh_key: yes
+    uid: '{{ user.uid }}'
+    group: '{{ user.group }}'
+    shell: '{{ user.shell }}'
+    groups: wheel,power,network
   become: true
 
 - name: 'create config dir'
   file:
-    src: '{{ user_config_dir }}'
+    src: '{{ user.config_dir }}'
     state: 'directory'
 
 - name: 'copy user-dirs dirs config'
-  become_user: '{{ user }}'
+  become_user: '{{ user.name }}'
   file:
     src: '{{ role_path }}/files/user-dirs.dirs'
-    dest: '{{ user_config_dir }}/user-dirs.dirs'
+    dest: '{{ user.config_dir }}/user-dirs.dirs'
     state: 'link'
 
 - name: 'copy user-dirs locale config'
-  become_user: '{{ user }}'
+  become_user: '{{ user.name }}'
   file:
     src: '{{ role_path }}/files/user-dirs.locale'
-    dest: '{{ user_config_dir }}/user-dirs.locale'
+    dest: '{{ user.config_dir }}/user-dirs.locale'
     state: 'link'
 
 - name: 'copy user aliases'
-  become_user: '{{ user }}'
+  become_user: '{{ user.name }}'
   file:
     src: '{{ role_path }}/files/aliases'
-    dest: '{{ user_dir }}/.aliases'
+    dest: '{{ user.home_dir }}/.aliases'
     state: 'link'

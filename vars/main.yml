@@ -1,4 +1,0 @@
----
-user_home_dir: '/home/{{ user }}'
-user_config_dir: '{{ user_home_dir }}/.config'
-

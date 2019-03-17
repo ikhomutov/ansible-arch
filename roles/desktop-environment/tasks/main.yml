@@ -1,0 +1,6 @@
+---
+- name: 'Include i3 task'
+  include_tasks: 'i3.yml'
+
+- name: 'Include rofi task'
+  include_tasks: 'rofi.yml'

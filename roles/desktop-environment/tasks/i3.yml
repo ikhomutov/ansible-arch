@@ -1,0 +1,17 @@
+---
+- name: 'install i3'
+  pacman:
+    name: '{{ item }}'
+    state: 'present'
+  with_items:
+    - 'i3-wm'
+    - 'i3blocks'
+    - 'i3lock'
+    - 'i3status'
+
+- name: 'copy i3 configs'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/i3'
+    dest: '{{ user.config_dir }}/i3'
+    state: 'link'
