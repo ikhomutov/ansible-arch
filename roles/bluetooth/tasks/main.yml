@@ -1,0 +1,11 @@
+---
+- name: 'Install bluetooth libraries and tools'
+  pacman:
+      name: [
+        'bluez',
+        'bluez-libs',
+        'bluez-utils',
+        'bluez-firmware',
+        'blueman',
+      ]
+      state: 'present'
