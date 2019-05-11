@@ -2,8 +2,8 @@
 - hosts: localhost
   become: yes
   roles:
+  - network
   - user
   - termite
   - nvim
   - ranger
-  - rofi

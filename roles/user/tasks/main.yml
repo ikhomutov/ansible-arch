@@ -12,7 +12,7 @@
 
 - name: 'create config dir'
   file:
-    src: '{{ user.config_dir }}'
+    dest: '{{ user.config_dir }}'
     state: 'directory'
 
 - name: 'copy user-dirs dirs config'
