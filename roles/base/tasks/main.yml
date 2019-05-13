@@ -1,0 +1,7 @@
+---
+- name: 'Install base packages'
+  pacman:
+    name:
+      - 'python-pip'
+      - 'xclip'
+    state: present

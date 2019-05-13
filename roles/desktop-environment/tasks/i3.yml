@@ -1,13 +1,12 @@
 ---
 - name: 'install i3'
   pacman:
-    name: '{{ item }}'
+    name:
+      - 'i3-wm'
+      - 'i3blocks'
+      - 'i3lock'
+      - 'i3status'
     state: 'present'
-  with_items:
-    - 'i3-wm'
-    - 'i3blocks'
-    - 'i3lock'
-    - 'i3status'
 
 - name: 'copy i3 configs'
   become_user: '{{ user.name }}'

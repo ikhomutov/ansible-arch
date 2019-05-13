@@ -1,5 +1,13 @@
 ---
-- name: Install NetworkManager and dependencies
+- name: 'Install NetworkManager and dependencies'
   pacman:
-      name: ['networkmanager', 'networkmanager-openvpn', 'network-manager-applet']
+      name: 
+        - 'networkmanager'
+        - 'networkmanager-openvpn'
+        - 'network-manager-applet'
       state: present
+
+- name: 'Enable NetworkManager'
+  service:
+    name: 'NetworkManager.service'
+    enabled: yes

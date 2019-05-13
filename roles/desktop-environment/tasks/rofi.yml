@@ -4,8 +4,8 @@
       name: 'rofi'
 
 - name: 'Rofi config files'
-  become_user: '{{ user }}'
+  become_user: '{{ user.name }}'
   file:
     src: '{{ role_path }}/files/rofi'
-    dest: '{{ user_config_dir }}/rofi'
+    dest: '{{ user.config_dir }}/rofi'
     state: 'link'

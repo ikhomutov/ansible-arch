@@ -1,0 +1,7 @@
+---
+- name: 'Laptop required packages'
+  pacman:
+    name:
+      - 'powertop'
+      - 'light'
+    state: present

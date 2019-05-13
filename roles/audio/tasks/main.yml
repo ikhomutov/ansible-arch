@@ -1,0 +1,10 @@
+---
+- name: 'Install audio packages'
+  pacman:
+    name:
+      - 'alsa-utils'
+      - 'pulseaudio'
+      - 'pulseaudio-alsa'
+      - 'pavucontrol'
+      - 'pasystray'
+    state: present

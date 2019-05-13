@@ -2,8 +2,15 @@
 - hosts: localhost
   become: yes
   roles:
+  - base
+  - audio
   - network
+  - usb
+  - bluetooth
   - user
   - termite
   - nvim
   - ranger
+  - x
+  - laptop
+  - desktop-environment

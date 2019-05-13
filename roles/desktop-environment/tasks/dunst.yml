@@ -1,0 +1,11 @@
+---
+- name: 'Installing dunst'
+  pacman:
+      name: 'dunst'
+
+- name: 'Dunst config files'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/dunst'
+    dest: '{{ user.config_dir }}/dunst'
+    state: 'link'
