@@ -1,0 +1,12 @@
+---
+- name: 'Installing transmission'
+  pacman:
+    name: 'transmission-cli'
+
+- name: 'Transmission config files'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/transmission-daemon'
+    dest: '{{ user.config_dir }}/transmission-daemon'
+    state: 'link'
+

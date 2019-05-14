@@ -1,0 +1,6 @@
+---
+- name: 'download nerd patched fonts'
+  get_url:
+    url: 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf'
+    dest: '/usr/share/fonts/'
+  notify: 'update fontconfig cache'

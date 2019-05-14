@@ -5,6 +5,9 @@
       - 'flameshot' # screenshot
     state: present
 
+- name: 'Include fonts task'
+  include_tasks: 'fonts.yml'
+
 - name: 'Include i3 task'
   include_tasks: 'i3.yml'
 

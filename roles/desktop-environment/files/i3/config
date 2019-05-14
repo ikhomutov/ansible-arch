@@ -194,7 +194,7 @@ bindsym $mod+n border normal
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id 'rofi -show drun'
+bindsym $mod+d exec --no-startup-id "rofi -show drun"
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -329,6 +329,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec --no-startup-id flameshot
+exec --no-startup-id transmission-daemon
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id sbxkb
