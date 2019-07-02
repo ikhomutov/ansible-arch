@@ -28,5 +28,3 @@ alias ez='$EDITOR ~/.zshrc'
 alias ea='$EDITOR ~/.aliases'
 alias ei='$EDITOR ~/.config/i3/config'
 alias et='$EDITOR ~/.config/termite/config'
-
-alias -s pdf='zathura'

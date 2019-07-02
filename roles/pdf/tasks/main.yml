@@ -1,0 +1,9 @@
+---
+- name: 'install zathura reader'
+  pacman:
+    name:
+      - 'zathura'
+      - 'zathura-cb'
+      - 'zathura-djvu'
+      - 'zathura-pdf-mupdf'
+    state: present

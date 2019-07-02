@@ -1,0 +1,11 @@
+---
+- name: 'Installing tmux'
+  pacman:
+    name: 'tmux'
+
+- name: 'tmux config file'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/tmux.conf'
+    dest: '{{ user.home_dir }}/.tmux.conf'
+    state: 'link'
