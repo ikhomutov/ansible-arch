@@ -104,7 +104,7 @@ syntax on
 set relativenumber
 set number
 set list
-set lcs=tab:⟶\ ,space:·,trail:·,nbsp:_,eol:¬
+set lcs=tab:▸\ ,space:·,trail:·,nbsp:_,eol:¬
 
 let g:loaded_matchparen=1
 

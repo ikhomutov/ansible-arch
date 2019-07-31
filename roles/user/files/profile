@@ -1,0 +1,4 @@
+TERM=termite
+PAGER=less
+EDITOR=nvim
+

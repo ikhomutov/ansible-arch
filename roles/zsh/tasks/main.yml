@@ -1,14 +1,38 @@
 ---
 - name: 'install zsh'
   pacman:
-    name: '{{ item }}'
-  with_items:
+    name:
       - 'zsh'
       - 'zsh-completions'
 
 - name: 'copy zsh config'
   become_user: '{{ user.name }}'
   file:
-    src: '{{ role_path }}/files/.zshrc'
+    src: '{{ role_path }}/files/zshrc'
     dest: '{{ user.home_dir }}/.zshrc'
     state: 'link'
+
+- name: 'make zsh directory'
+  become_user: '{{ user.name }}'
+  file:
+    path: '{{ user.home_dir }}/.zsh'
+    state: directory
+
+- name: 'clone repos with zsh plugins'
+  become_user: '{{ user.name }}'
+  git:
+    repo: '{{ item.repo }}'
+    dest: '{{ user.home_dir }}/.zsh/{{ item.name }}'
+  with_items:
+    - repo: 'https://github.com/robbyrussell/oh-my-zsh'
+      name: 'oh-my-zsh'
+    - repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+      name: 'zsh-autosuggestions'
+    - repo: 'https://github.com/zsh-users/zsh-syntax-highlighting'
+      name: 'zsh-syntax-highlighting'
+
+- name: 'change user shell'
+  user:
+    name: '{{ user.name }}'
+    shell: /bin/zsh
+

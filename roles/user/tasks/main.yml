@@ -5,21 +5,11 @@
     dest: '{{ user.config_dir }}'
     state: 'directory'
 
-- name: 'remove old user-dirs.dirs file'
-  file:
-    dest: '{{ user.config_dir }}/user-dirs.dirs'
-    state: absent
-
 - name: 'copy user-dirs dirs config'
   become_user: '{{ user.name }}'
   copy:
     src: '{{ role_path }}/files/user-dirs.dirs'
     dest: '{{ user.config_dir }}/user-dirs.dirs'
-
-- name: 'remove old user-dirs.locale file'
-  file:
-    dest: '{{ user.config_dir }}/user-dirs.locale'
-    state: absent
 
 - name: 'copy user-dirs locale config'
   become_user: '{{ user.name }}'
@@ -32,4 +22,11 @@
   file:
     src: '{{ role_path }}/files/aliases'
     dest: '{{ user.home_dir }}/.aliases'
+    state: link
+
+- name: 'copy user env'
+  become_user: '{{ user.name }}
+  file:
+    src: '{{ role_path }}/files/profile'
+    dest: '{{ user.home_dir }}/.profile'
     state: link
