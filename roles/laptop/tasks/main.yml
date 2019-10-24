@@ -3,5 +3,6 @@
   pacman:
     name:
       - 'powertop'
-      - 'light'
+      - 'xorg-xbacklight'
+      - 'xfce4-power-manager'
     state: present
