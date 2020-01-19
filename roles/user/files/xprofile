@@ -1,0 +1,12 @@
+setxkbmap -layout 'us,ru' -option grp:caps_toggle,grp_led:caps,ctrl:swap_lalt_lctl
+
+udiskie &
+sxhkd &
+
+nm-applet &
+pasystray &
+pa-applet &
+blueman-applet &
+
+flameshot &
+transmission-daemon &

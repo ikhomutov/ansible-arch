@@ -16,3 +16,6 @@
 
 - name: 'Include dunst task'
   include_tasks: 'dunst.yml'
+
+- name: 'Include sxhkd task'
+  include_tasks: 'sxhkd.yml'

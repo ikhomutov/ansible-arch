@@ -24,9 +24,16 @@
     dest: '{{ user.home_dir }}/.aliases'
     state: link
 
-- name: 'copy user env'
-  become_user: '{{ user.name }}
+- name: 'copy profile file'
+  become_user: '{{ user.name }}'
   file:
     src: '{{ role_path }}/files/profile'
     dest: '{{ user.home_dir }}/.profile'
+    state: link
+
+- name: 'copy xprofile file'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/xprofile'
+    dest: '{{ user.home_dir }}/.xprofile'
     state: link

@@ -1,0 +1,11 @@
+---
+- name: 'Installing sxhkd'
+  pacman:
+      name: 'sxhkd'
+
+- name: 'sxhkd config files'
+  become_user: '{{ user.name }}'
+  file:
+    src: '{{ role_path }}/files/sxhkd'
+    dest: '{{ user.config_dir }}/sxhkd'
+    state: 'link'

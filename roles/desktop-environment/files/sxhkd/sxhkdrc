@@ -1,0 +1,5 @@
+super + Return
+    termite
+
+XF86MonBrightness{Up,Down}
+    xbacklight {-inc 5,-dec 5}

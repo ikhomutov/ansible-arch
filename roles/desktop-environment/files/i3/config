@@ -180,7 +180,6 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun"
 
 # Start Applications
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod+Return exec $terminal
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec ranger
@@ -294,32 +293,3 @@ bindsym $mod+0 mode "$mode_system"
 
 # Hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
-
-# Control screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-# Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
-
-
-#############
-# Autostart #
-#############
-
-exec --no-startup-id udiskie
-exec --no-startup-id pasystray
-exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet
-exec --no-startup-id pa-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id clipit
-exec --no-startup-id flameshot
-exec --no-startup-id transmission-daemon
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id sbxkb
-exec_always setxkbmap -layout 'us,ru' -option grp:caps_toggle,grp_led:caps,ctrl:swap_lalt_lctl

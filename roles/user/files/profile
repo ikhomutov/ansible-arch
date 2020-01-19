@@ -1,4 +1,4 @@
-TERM=termite
-PAGER=less
-EDITOR=nvim
+export TERM="termite"
+export PAGER="less"
+export EDITOR="nvim"
 
