@@ -9,3 +9,7 @@ __pycache__/
 dht.dat
 *.torrent
 *.resume
+stats.json
+
+# Nvim files
+.netrwhist
