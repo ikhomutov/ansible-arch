@@ -1,5 +1,5 @@
 rofi.combi-modi: run,ssh,window
 rofi.theme: solarized
-rofi.modi: combi
+rofi.modi: drun,combi
 
 rofi.terminal: termite

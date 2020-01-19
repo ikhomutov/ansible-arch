@@ -1,5 +1,21 @@
 super + Return
-    termite
+    $TERM
 
 XF86MonBrightness{Up,Down}
-    xbacklight {-inc 5,-dec 5}
+    xbacklight {-inc 5,-dec 5} && notify-send -t 3000 "$(xbacklight -get)"
+
+XF86AudioMute
+    amixer -q sset Master toggle
+
+XF86Audio{Raise,Lower}Volume
+    amixer -q sset Master 5%{+,-}
+
+XF86AudioMicMute
+    amixer -q sset Capture toggle
+
+super + d
+    rofi -show drun
+
+Print
+    flameshot gui
+

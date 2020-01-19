@@ -2,7 +2,6 @@
 # General Settings #
 ####################
 set $mod Mod4
-set $terminal termite
 
 # Workspace names
 set $ws1 1:WEB
@@ -73,8 +72,6 @@ set_from_resource $term_color12    color12
 set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
-
-
 
 # Theme colors
 #                       border  backgr. text    indic.   child_border
@@ -170,28 +167,6 @@ bindsym $mod+n border normal
 
 # kill focused window
 bindsym $mod+q kill
-
-# start program launcher
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
-
-# Start Applications
-bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
-bindsym $mod+F2 exec chromium
-bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec $terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # change focus
 bindsym $mod+h focus left

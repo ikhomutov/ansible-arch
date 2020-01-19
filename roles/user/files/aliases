@@ -22,9 +22,10 @@ alias djcs='python manage.py collectstatic'
 
 # Main config files
 alias e='$EDITOR'
-alias en='$EDITOR ~/.config/nvim/init.vim'
 alias ev='$EDITOR ~/.vimrc'
 alias ez='$EDITOR ~/.zshrc'
 alias ea='$EDITOR ~/.aliases'
+alias en='$EDITOR ~/.config/nvim/init.vim'
 alias ei='$EDITOR ~/.config/i3/config'
 alias et='$EDITOR ~/.config/termite/config'
+alias es='$EDITOR ~/.config/sxhkd/sxhkdrc'
