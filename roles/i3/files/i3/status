@@ -20,6 +20,7 @@ order += "disk /"
 order += "disk /home"
 order += "volume master"
 order += "battery all"
+order += "backlight"
 order += "tztime local"
 
 cpu_usage {
@@ -60,4 +61,8 @@ volume master {
         device = "default"
         mixer = "Master"
         mixer_idx = 0
+}
+
+backlight {
+        cache_timeout = 0.5
 }

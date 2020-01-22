@@ -3,16 +3,14 @@
   pacman:
     name: 'neovim'
 
+- name: 'Installing python nvim plugin'
+  pip:
+    name: 'neovim'
+
 - name: 'Nvim config files'
   become_user: '{{ user.name }}'
   file:
     src: '{{ role_path }}/files/nvim'
     dest: '{{ user.config_dir }}/nvim'
     state: 'link'
-
-- name: 'Installing python nvim plugin'
-  pip:
-    name: 'neovim'
-
-#- name: 'Installing nvim plugins'
-  #shell: 'nvim "+silent! PlugInstall!" +qall!'
+  tags: 'dotfiles'

@@ -9,3 +9,4 @@
     src: '{{ role_path }}/files/ranger'
     dest: '{{ user.config_dir }}/ranger'
     state: 'link'
+  tags: 'dotfiles'

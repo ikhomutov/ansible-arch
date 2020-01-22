@@ -9,3 +9,4 @@
     src: '{{ role_path }}/files/rofi'
     dest: '{{ user.config_dir }}/rofi'
     state: 'link'
+  tags: 'dotfiles'

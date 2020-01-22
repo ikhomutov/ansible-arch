@@ -31,6 +31,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'Chiel92/vim-autoformat'
 
 Plug 'pearofducks/ansible-vim'
+Plug 'kovetskiy/sxhkd-vim'
 
 call plug#end()
 

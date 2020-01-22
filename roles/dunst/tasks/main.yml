@@ -9,3 +9,4 @@
     src: '{{ role_path }}/files/dunst'
     dest: '{{ user.config_dir }}/dunst'
     state: 'link'
+  tags: 'dotfiles'

@@ -9,4 +9,4 @@
     src: '{{ role_path }}/files/transmission-daemon'
     dest: '{{ user.config_dir }}/transmission-daemon'
     state: 'link'
-
+  tags: 'dotfiles'

@@ -11,6 +11,7 @@
     src: '{{ role_path }}/files/zshrc'
     dest: '{{ user.home_dir }}/.zshrc'
     state: 'link'
+  tags: 'dotfiles'
 
 - name: 'make zsh directory'
   become_user: '{{ user.name }}'

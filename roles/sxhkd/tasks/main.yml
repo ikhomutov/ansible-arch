@@ -9,3 +9,4 @@
     src: '{{ role_path }}/files/sxhkd'
     dest: '{{ user.config_dir }}/sxhkd'
     state: 'link'
+  tags: 'dotfiles'

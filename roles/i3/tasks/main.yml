@@ -14,3 +14,4 @@
     src: '{{ role_path }}/files/i3'
     dest: '{{ user.config_dir }}/i3'
     state: 'link'
+  tags: 'dotfiles'

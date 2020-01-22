@@ -9,3 +9,4 @@
     src: '{{ role_path }}/files/termite'
     dest: '{{ user.config_dir }}/termite'
     state: 'link'
+  tags: 'dotfiles'
